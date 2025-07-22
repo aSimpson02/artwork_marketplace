@@ -1,51 +1,39 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Heart } from 'lucide-react-native';
+import React from "react";
+import { View, Text, Image } from "react-native";
 
 type ArtworkCardProps = {
   title: string;
-  artist: string;
-  course: string;
-  price: string;
-  category: string;
-  likes: number;
-  onPress?: () => void;
+  image?: string;
+  price?: string;
+  course?: string;
+  category?: string;
+  likes?: number;
 };
 
 export default function ArtworkCard({
   title,
-  artist,
-  course,
+  image,
   price,
+  course,
   category,
   likes,
-  onPress,
 }: ArtworkCardProps) {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      className="bg-white dark:bg-black rounded-xl overflow-hidden border border-gray-300 dark:border-gray-700 w-[48%] mb-4"
-    >
-      <View className="h-32 bg-gray-200 dark:bg-gray-800 items-center justify-center">
-        <Text className="text-xs text-gray-400">Image</Text>
-      </View>
-
-      <View className="p-3">
-        <Text className="font-semibold text-black dark:text-white">{title}</Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">{`by ${artist}`}</Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">{course}</Text>
-
-        <View className="flex-row justify-between items-center mt-2">
-          <Text className="font-bold text-black dark:text-white">{price}</Text>
-          <View className="flex-row items-center space-x-1">
-            <Heart size={16} color="gray" />
-            <Text className="text-xs text-gray-600 dark:text-gray-400">{likes}</Text>
-          </View>
-        </View>
-
-        <View className="mt-2 self-start px-2 py-1 border border-gray-400 dark:border-gray-600 rounded-full">
-          <Text className="text-xs text-gray-700 dark:text-gray-300">{category}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+    <View className="bg-white dark:bg-zinc-900 rounded-xl p-4 mb-4 shadow-md">
+      {image && (
+        <Image
+          source={{ uri: image }}
+          className="w-full h-40 rounded-md mb-2"
+          resizeMode="cover"
+        />
+      )}
+      <Text className="text-lg font-semibold text-black dark:text-white">{title}</Text>
+      {course && <Text className="text-sm text-gray-600 dark:text-gray-400">{course}</Text>}
+      {price && <Text className="text-sm text-green-600 dark:text-green-400">{price}</Text>}
+      {category && <Text className="text-sm text-gray-500 dark:text-gray-300">{category}</Text>}
+      {likes !== undefined && (
+        <Text className="text-sm text-gray-400 dark:text-gray-500">Likes: {likes}</Text>
+      )}
+    </View>
   );
 }
