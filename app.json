@@ -1,0 +1,11 @@
+
+{
+  "expo": {
+    "name": "artwork_marketplace",
+    "slug": "artwork_marketplace",
+    "version": "1.0.0",
+    "sdkVersion": "53.0.0",
+    "platforms": ["ios", "android"],
+    "jsEngine": "hermes"
+  }
+}

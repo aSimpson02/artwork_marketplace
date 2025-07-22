@@ -1,5 +1,20 @@
 {
+  "main": "expo-router/entry",
   "dependencies": {
-    "nativewind": "^4.1.23"
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "@react-native-picker/picker": "2.11.1",
+    "expo": "^53.0.20",
+    "expo-image-picker": "~16.1.4",
+    "expo-linear-gradient": "~14.1.5",
+    "expo-router": "~5.1.4",
+    "expo-status-bar": "~2.2.3",
+    "expo-system-ui": "~5.0.10",
+    "lucide-react-native": "^0.525.0",
+    "nativewind": "^4.1.23",
+    "react-native-appearance": "^0.3.4",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1"
   }
 }
